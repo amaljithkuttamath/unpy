@@ -1,15 +1,21 @@
-# UNPY
+# UNPY[MACOS] / PY[LINUX]
 
 ## Steps to get started:
 
 1. Clone this repository.
 2. Open terminal in the directory.
-3. Commands to use:
+3. Commands to use for [unpy] MACOS:
     
     Usage: [./unpy check 3 del ] [ ./unpy check 2 del ] [ ./unpy check all ] [ ./unpy check 3 ] [ unpy check 2 ]
- 
 
-Details of each command.
+4. Commands to use for [py] Linux:
+
+    Usage: [./py install 3.8.6 ]
+    ```shell
+    ./py install 3.8.6  ----> Installs python 3.8.6 // Linux
+      ```
+
+ Details of each command.
 
 ```shell
 ./unpy check 3 del  ----> Deletes Python 3 from system

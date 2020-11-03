@@ -27,9 +27,9 @@ helpFunction()
    exit 1 # Exit script after printing help
 }
 
-if [ -z "$3" ];then
+# if [ -z "$3" ];then
 printthis    
-fi
+# fi
 
 
 py ()
@@ -40,19 +40,20 @@ py ()
             then
             sudo apt update
             sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
-            cd /opt
-            wget https://www.python.org/ftp/python/3.8.6/Python-3.8.6.tgz
+            mkdir abc && cd abc
+            sudo wget https://www.python.org/ftp/python/3.8.6/Python-3.8.6.tgz
             sudo tar xzf Python-3.8.6.tgz
             cd Python-3.8.6
             ./configure --enable-optimizations
             make -j 8
             python3.8 --version
-            cd /opt
-            sudo rm -f Python-3.8.6
+            echo " Installed Python 3.8.6 "
+            cd ..
+            sudo rm -f Python-3.8.6.tgz
+            sudo rm -r Python-3.8.6
+            echo "########### Installation complete ###############"
         fi
         ;;
-        
-        
     esac  
 
 }
