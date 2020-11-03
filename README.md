@@ -4,16 +4,18 @@
 
 1. Clone this repository.
 2. Open terminal in the directory.
-3. Commands to use for [unpy] MACOS:
-    
-    Usage: [./unpy check 3 del ] [ ./unpy check 2 del ] [ ./unpy check all ] [ ./unpy check 3 ] [ unpy check 2 ]
 
-4. Commands to use for [py] Linux:
+3. Commands to use for [py] Linux:
 
     Usage: [./py install 3.8.6 ]
     ```shell
     ./py install 3.8.6  ----> Installs python 3.8.6 // Linux
       ```
+-------------------------------------------------------------------------------------------------------------------
+4. Commands to use for [unpy] MACOS:
+    
+    Usage: [./unpy check 3 del ] [ ./unpy check 2 del ] [ ./unpy check all ] [ ./unpy check 3 ] [ unpy check 2 ]
+
 
  Details of each command.
 
