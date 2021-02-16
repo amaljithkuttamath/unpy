@@ -23,7 +23,7 @@ helpFunction()
 {
    echo ""
    echo "Usage: [./py install 3.8.6 ] "
-   echo -e " ./unpy install 3.8. ----> Installs 3.8.6 from source"
+   echo -e " ./py install 3.8. ----> Installs 3.8.6 from source"
    exit 1 # Exit script after printing help
 }
 
@@ -36,25 +36,26 @@ py ()
 {    
     case $1 in
         install)
-        if [ "$2" = "3.8.6" ];
+        if [ "$2" = "3.8.6" ] || [ "$2" = "3.8.7" ] ;
             then
             sudo apt update
             sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
             cd /opt
-            wget https://www.python.org/ftp/python/3.8.6/Python-3.8.6.tgz
-            sudo tar xzf Python-3.8.6.tgz
-            cd Python-3.8.6
-            ./configure --enable-optimizations
-            make -j 8
+            wget https://www.python.org/ftp/python/$2/Python-$2.tgz
+            sudo tar xzf Python-$2.tgz
+            cd Python-$2
+            sudo ./configure --enable-optimizations
+            if [$3 == "multithread"];
+                then 
+                make -j 8
+                else
+                sudo make altinstall
+            fi
             python3.8 --version
             cd /opt
-            sudo rm -f Python-3.8.6
+            sudo rm -f Python-$2
         fi
-        ;;
-        
-        
     esac  
-
 }
 
 pushd `dirname $0` > /dev/null
