@@ -27,9 +27,9 @@ helpFunction()
    exit 1 # Exit script after printing help
 }
 
-if [ -z "$3" ];then
+# if [ -z "$3" ];then
 printthis    
-fi
+# fi
 
 
 py ()
