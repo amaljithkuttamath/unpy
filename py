@@ -36,12 +36,20 @@ py ()
 {    
     case $1 in
         install)
-        if [ "$2" = "3.8.6" ] || [ "$2" = "3.8.7" ] ;
+        if [ "$2" = "3.8.6" ] || [ "$2" = "3.8.7" ] || [ "$2" = "3.8.8" ] ;
             then
             sudo apt update
             sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
             cd /opt
+            (
             wget https://www.python.org/ftp/python/$2/Python-$2.tgz
+            )
+            errorCode=$?
+            if [ $errorCode -ne 0 ]; then
+                echo "no such file"
+                exit $errorCode
+            fi
+
             sudo tar xzf Python-$2.tgz
             cd Python-$2
             sudo ./configure --enable-optimizations
